@@ -1,85 +1,9 @@
 import AgentPulse from "@/components/AgentPulse";
 import React from "react";
-import { Brain, ImageIcon, MessageSquare, Sparkles, Video } from "lucide-react";
 import YoutubeVideoForm from "@/components/YoutubeVideoForm";
-
-interface Feature {
-  title: string;
-  description: string;
-  icon: React.FC<React.SVGProps<SVGSVGElement>>;
-  iconBg: string;
-  iconColor: string;
-}
-
-export const steps = [
-  {
-    title: "1. Connect Your Content",
-    description: "Share your YouTube video URL and let your agent get to work",
-    icon: Video,
-  },
-  {
-    title: "2. AI Agent Analysis",
-    description: "Your personal agent analyzes every aspect of your content",
-    icon: Brain,
-  },
-  {
-    title: "3. Receive Intelligence",
-    description: "Get actionable insights and strategic recommendations",
-    icon: MessageSquare,
-  },
-];
-
-export const features: Feature[] = [
-  {
-    title: "AI Analysis",
-    description:
-      "Get deep insights into your video content with our advanced AI analysis. Understand viewer engagement and content performance at a glance.",
-    icon: Brain,
-    iconBg: "bg-blue-100",
-    iconColor: "text-blue-600",
-  },
-  {
-    title: "Smart Transcription",
-    description:
-      "Get accurate transcriptions of your videos. Perfect for creating subtitles, blog posts, or repurposing content.",
-    icon: ImageIcon,
-    iconBg: "bg-green-100",
-    iconColor: "text-green-600",
-  },
-  {
-    title: "Thumbnail Generation",
-    description:
-      "Generate eye-catching thumbnails using AI. Boost your click-through rates with compelling visuals.",
-    icon: ImageIcon,
-    iconBg: "bg-purple-100",
-    iconColor: "text-purple-600",
-  },
-  {
-    title: "Title Generation",
-    description:
-      "Create attention-grabbing, SEO-optimized titles for your videos using AI. Maximize views with titles that resonate with your audience.",
-    icon: MessageSquare,
-    iconBg: "bg-yellow-100",
-    iconColor: "text-yellow-600",
-  },
-
-  {
-    title: "Shot Script",
-    description:
-      "Get detailed, step-by-step instructions to recreate viral videos. Learn shooting techniques, angles, and editing tips from successful content.",
-    icon: Video,
-    iconBg: "bg-red-100",
-    iconColor: "text-red-600",
-  },
-  {
-    title: "Discuss with Your AI Agent",
-    description:
-      "Engage in deep conversations about your content strategy, brainstorm ideas, and unlock new creative possibilities with your AI agent companion.",
-    icon: Sparkles,
-    iconBg: "bg-orange-100",
-    iconColor: "text-orange-600",
-  },
-];
+import { features, steps } from "@/constants/content";
+import Image from "next/image";
+import coffee from "@/assets/icons8-coffee-cup.gif";
 
 export default function Home() {
   return (
@@ -89,15 +13,22 @@ export default function Home() {
           <div className="flex flex-col items-center gap-10 text-center mb-12">
             <AgentPulse size="large" />
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Meet your Personal{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
-                AI Content Agent
+              Meet your{" "}
+              <span className="bg-gradient-to-r from-red-400 to-red-200 bg-clip-text text-transparent">
+                AI Content Co-Pilot
               </span>{" "}
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Transform your video content with AI-powered analysis,
-              transcription, and insights. Get Started in seconds
-            </p>
+            <div className="text-xl flex flex-col items-center text-gray-600 text-center mb-8 max-w-2xl mx-auto ">
+              <p className="text-center">
+                Unlock instant video breakdowns, smart captions, and performance
+                secrets{" "}
+              </p>
+              <p className="flex items-center mt-1">
+                – all before your coffee cools.{" "}
+                <Image className="w-6 h-6" alt="coffee gif" src={coffee} />
+              </p>
+            </div>
+
             <YoutubeVideoForm />
           </div>
         </div>
@@ -145,7 +76,7 @@ export default function Home() {
                   key={index}
                   className="text-center p-6 rounded-xl bg-white shadow-md hover:shadow-lg transition-all"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-20 h-20 bg-gradient-to-r from-red-200 to-red-400 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
@@ -157,7 +88,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 md:px-0 bg-gradient-to-r from-blue-600 to-blue-400">
+      <section className="py-20 px-4 md:px-0 bg-gradient-to-r from-red-400 to-red-200">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Ready to Meet Your AI Content Agent?

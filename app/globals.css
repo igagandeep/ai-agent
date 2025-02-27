@@ -127,3 +127,20 @@
     @apply bg-background text-foreground;
   }
 }
+/* app/globals.css */
+.cl-modalBackdrop {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.cl-card {
+  border: 1px solid #e5e7eb !important;
+}
+
+.cl-buttonPrimary {
+  background-color: #2563eb !important;
+  &:hover {
+    background-color: #1d4ed8 !important;
+  }
+}
+
+
